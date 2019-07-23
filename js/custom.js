@@ -1,5 +1,5 @@
 window.onload = function () {
-
+    $("#menu.menu").niceScroll();
     $("#menu-toggle").click(function () {
         $("#menu").toggleClass('open');
         $("#menu-toggle").css("display", "none");
@@ -21,22 +21,17 @@ window.onload = function () {
 
     $("a.about").click(function () {
         redirect("#about");
-        return false;
     });
     $("a.service").click(function () {
         redirect("#service");
-        return false;
     });
     $("a.my-case").click(function () {
         redirect("#my-case");
-        return false;
     });
     $(window).on('scroll', function () {
 
         var divPosition = $('#service').offset().top;
         var currentPosition = $(window).scrollTop();
-        console.log(currentPosition);
-        console.log(divPosition);
         if (currentPosition < 1110) {
             $('a.about').parent().addClass('active');
             $('a.about').parent().siblings().removeClass('active');
